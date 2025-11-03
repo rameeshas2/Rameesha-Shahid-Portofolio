@@ -1,0 +1,238 @@
+/* ===== RESET & GLOBAL ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #0b0d12;
+  color: #e9e9e9;
+  line-height: 1.7;
+  scroll-behavior: smooth;
+}
+
+/* ===== HEADER ===== */
+header {
+  text-align: center;
+  padding: 80px 20px 60px;
+  background: radial-gradient(circle at top left, #1a1f2e, #0b0d12);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+  position: relative;
+  overflow: hidden;
+}
+
+header::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: linear-gradient(120deg, rgba(108,99,255,0.1), rgba(126,214,223,0.1));
+  animation: moveGradient 6s linear infinite;
+  z-index: 0;
+}
+
+@keyframes moveGradient {
+  0% { transform: translateX(-50%); }
+  50% { transform: translateX(50%); }
+  100% { transform: translateX(-50%); }
+}
+
+header h1 {
+  font-size: 3em;
+  font-weight: 700;
+  color: #ffffff;
+  text-shadow: 0 0 15px #7ed6df, 0 0 25px #6c63ff;
+  position: relative;
+  z-index: 1;
+}
+
+.underline {
+  width: 120px;
+  height: 4px;
+  background: linear-gradient(90deg, #6c63ff, #7ed6df);
+  margin: 10px auto 15px;
+  border-radius: 4px;
+}
+
+header p {
+  font-size: 1.2em;
+  color: #c7c7c7;
+  position: relative;
+  z-index: 1;
+}
+
+/* ===== SECTIONS ===== */
+section {
+  max-width: 1100px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+section h2 {
+  text-align: center;
+  color: #7ed6df;
+  font-size: 2em;
+  margin-bottom: 25px;
+  position: relative;
+}
+
+section h2::after {
+  content: "";
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #6c63ff, #7ed6df);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -10px;
+  border-radius: 5px;
+}
+
+/* ===== PROJECTS (SINGLE LINE) ===== */
+.project-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.project {
+  flex: 1 1 calc(33.33% - 20px);
+  background: #151822;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(108, 99, 255, 0.2);
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.project:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 25px rgba(108, 99, 255, 0.35);
+}
+
+.project img {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.project h3 {
+  color: #a29bfe;
+  margin-bottom: 10px;
+}
+
+.project p {
+  color: #d8d8d8;
+  font-size: 0.95rem;
+}
+
+/* ===== CONTACT FORM ===== */
+form {
+  background: #151822;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.3);
+}
+
+form label {
+  color: #bfbfbf;
+  margin-top: 10px;
+  display: block;
+}
+
+form input,
+form select,
+form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 6px;
+  border: none;
+  border-radius: 6px;
+  background: #1d1f2b;
+  color: white;
+  font-size: 0.95em;
+}
+
+.checkbox-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.checkbox-group label {
+  color: #bfbfbf;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.9em;
+}
+
+button {
+  margin-top: 20px;
+  background: linear-gradient(135deg, #6c63ff, #7ed6df);
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 1em;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: linear-gradient(135deg, #7ed6df, #6c63ff);
+  transform: scale(1.02);
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background: #10121a;
+  color: #9a9a9a;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9em;
+}
+
+footer a {
+  color: #7ed6df;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #a29bfe;
+  text-decoration: underline;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .project {
+    flex: 1 1 calc(50% - 20px);
+  }
+}
+
+@media (max-width: 600px) {
+  .project {
+    flex: 1 1 100%;
+  }
+}
+
+.project img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(108, 99, 255, 0.25);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.project img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(2, 81, 90, 0.45), 0 0 40px rgba(108, 99, 255, 0.3);
+}
